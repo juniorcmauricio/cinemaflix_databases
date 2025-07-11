@@ -1,0 +1,8 @@
+# Drivers dos bancos de dados (versão mais simples de instalar)
+mysql-connector-python
+neo4j
+redis
+
+# Ferramentas úteis para análise de dados
+pandas
+sqlalchemy

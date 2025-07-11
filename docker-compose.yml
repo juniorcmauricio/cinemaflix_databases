@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # Serviço do Banco de Dados Relacional
+  mariadb:
+    image: mariadb:10.6
+    container_name: cinemaflix_mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: cinemaflix_db
+      MYSQL_USER: cinemaflix_user
+      MYSQL_PASSWORD: user_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  # Serviço do Banco de Dados de Grafo (versão Community, mais leve)
+  neo4j:
+    image: neo4j:5-community
+    container_name: cinemaflix_neo4j
+    restart: always
+    ports:
+      - "7474:7474" # Porta para o Browser Neo4j
+      - "7687:7687" # Porta para conexão via driver (Bolt)
+    environment:
+      NEO4J_AUTH: neo4j/strong_password # Formato: usuario/senha
+    volumes:
+      - neo4j_data:/data
+
+  # Serviço de Cache em Memória
+  redis:
+    image: redis:6.2-alpine
+    container_name: cinemaflix_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  # Serviço do Jupyter Notebook para desenvolvimento
+  jupyter:
+    build: ./jupyter
+    container_name: cinemaflix_jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./jupyter/notebooks:/home/jovyan/work
+    depends_on:
+      - mariadb
+      - neo4j
+      - redis
+
+# Volumes para persistir os dados dos bancos
+volumes:
+  mariadb_data:
+  neo4j_data:
+  redis_data:
