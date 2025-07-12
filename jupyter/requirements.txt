@@ -1,8 +1,23 @@
-# Drivers dos bancos de dados (versão mais simples de instalar)
+# Drivers e extensões para os bancos
 mysql-connector-python
 neo4j
 redis
+ipython-sql
+sqlalchemy
+prettytable==2.5.0
 
 # Ferramentas úteis para análise de dados
 pandas
-sqlalchemy
+matplotlib
+plotly
+py2neo
+ipython-cypher
+networkx
+igraph
+jgraph
+pprintpp
+yfiles_jupyter_graphs
+yfiles_jupyter_graphs_for_neo4j
+graph-notebook
+numpy<1.24
+ipywidgets
