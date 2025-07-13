@@ -6,7 +6,7 @@ ipython-sql
 sqlalchemy
 prettytable==2.5.0
 
-# Ferramentas úteis para análise de dados
+# packages
 pandas
 matplotlib
 plotly
@@ -20,4 +20,5 @@ yfiles_jupyter_graphs
 yfiles_jupyter_graphs_for_neo4j
 graph-notebook
 numpy<1.24
-ipywidgets
+ipywidgets>=7.6
+graphdatascience
