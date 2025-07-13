@@ -4,7 +4,8 @@ from yfiles_jupyter_graphs import GraphWidget
 from IPython.core.magic import (register_line_magic,
                                 register_cell_magic)
 
-driver = GraphDatabase.driver(uri = "neo4j://localhost")
+#driver = GraphDatabase.driver(uri = "neo4j://localhost")
+driver = GraphDatabase.driver("neo4j://neo4j:7687", auth=("neo4j", "strong_password"))
 
 def query_neo4j(cypher_query: str):
     query_graph_result = driver.session().run(cypher_query).graph()
