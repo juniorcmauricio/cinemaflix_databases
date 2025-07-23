@@ -29,6 +29,20 @@ services:
     volumes:
       - neo4j_data:/data
 
+  # Serviço do Banco MongoDB
+  mongodb:
+    image: mongo:6
+    container_name: cinemaflix_mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root_password
+    volumes:
+      - mongodb_data:/data/db
+
+
   # Serviço de Cache em Memória
   redis:
     image: redis:6.2-alpine
@@ -51,9 +65,11 @@ services:
       - mariadb
       - neo4j
       - redis
+      - mongodb
 
 # Volumes para persistir os dados dos bancos
 volumes:
   mariadb_data:
   neo4j_data:
   redis_data:
+  mongodb_data:
