@@ -1,6 +1,7 @@
 # Drivers e extensões para os bancos
 mysql-connector-python
 neo4j
+pymongo
 redis
 ipython-sql
 sqlalchemy
