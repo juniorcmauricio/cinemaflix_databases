@@ -40,18 +40,6 @@ Parar e remover os contêineres: docker-compose down
 Parar e remover contêineres E DADOS: docker-compose down -v
 
 
-    
-<br><br>
-🗄️ **Acesso aos Bancos**
-
-Neo4j Browser: http://localhost:7474 (Usuário: neo4j, Senha: strong_password)
-
-MariaDB: Host: localhost, Porta: 3306 (Usuário: cinemaflix_user, Senha: user_password)
-
-MongoDB: URI: mongodb://root:root_password@localhost:27017/
-
-Redis: Host: localhost, Porta: 6379
-
 <br><br>
 📓 **Notebook Principal**
 
@@ -68,3 +56,17 @@ Neste notebook, você encontrará:
 - Os scripts para criar os schemas e popular as bases com dados.
 
 - As consultas relevantes que foram desenvolvidas para o relatório.
+
+    
+<br><br>
+🗄️ **Acesso aos Bancos**
+
+Neo4j Browser: http://localhost:7474 (Usuário: neo4j, Senha: strong_password)
+
+MariaDB: Host: localhost, Porta: 3306 (Usuário: cinemaflix_user, Senha: user_password)
+
+MongoDB: URI: mongodb://root:root_password@localhost:27017/
+
+Redis: Host: localhost, Porta: 6379
+
+
